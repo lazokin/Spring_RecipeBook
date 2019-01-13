@@ -1,0 +1,8 @@
+<div th:fragment="recipes" class="row">
+	<div class="col-md-5">
+		<div th:replace="recipe-list::recipe-list"></div>
+	</div>
+	<div class="col-md-7">
+		<div th:replace="recipe-detail::recipe-detail"></div>
+	</div>
+</div>

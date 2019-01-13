@@ -10,7 +10,7 @@
 	<div class="container-fluid">
 		<div class="row mt-2">
 			<div class="col-12">
-				<div th:replace="recipes::recipes"></div>
+				<div th:replace="recipes::recipes (${recipes})"></div>
 				<div th:replace="shopping-list::shopping-list"></div>
 			</div>
 		</div>

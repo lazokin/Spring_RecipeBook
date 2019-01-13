@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.lazokin.recipebook.domain.Ingredient;
 import com.lazokin.recipebook.domain.Recipe;
 
 @Controller
@@ -25,7 +26,12 @@ public class IndexController {
 				.imageUrl("https://img.taste.com.au/qqy4eglS/w643-h428-cfill-q90/taste/2016/11/fish-tacos-95173-1.jpeg")
 				.build()
 		);
+		List<Ingredient> ingredients = List.of(
+				Ingredient.builder().name("Apple").amount(5).build(),
+				Ingredient.builder().name("Tomato").amount(10).build()
+		);
 		model.addAttribute("recipes", recipes);
+		model.addAttribute("ingredients", ingredients);
 		return "index";
 	}
 

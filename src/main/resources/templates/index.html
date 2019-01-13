@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div th:replace="recipes::recipes (${recipes})"></div>
-				<div th:replace="shopping-list::shopping-list"></div>
+				<div th:replace="shopping-list::shopping-list (${ingredients})"></div>
 			</div>
 		</div>
 	</div>

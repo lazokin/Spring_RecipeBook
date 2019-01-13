@@ -2,11 +2,6 @@
 <div th:fragment="recipe-list (recipes)">
 	<div class="row">
 		<div class="col-12">
-			<button type="button" class="btn btn-primary mb-2">New Recipe</button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-12">
 			<a href="#" class="list-group-item list-group-item-action" th:each="recipe : ${recipes}">
 				<div class="d-flex justify-content-between">
 					<div class="m-1">
@@ -18,6 +13,11 @@
 					</div>
 				</div>
 			</a>
+		</div>
+	</div>
+	<div class="row mt-2">
+		<div class="col-12">
+			<button type="button" class="btn btn-primary">New Recipe</button>
 		</div>
 	</div>
 </div>

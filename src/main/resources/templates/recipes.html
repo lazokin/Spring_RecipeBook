@@ -1,10 +1,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="recipes (recipes)" class="row">
-	<div class="col-lg-5">
-		<div th:replace="recipe-list::recipe-list (${recipes})"></div>
+	<div class="col-lg-6">
+		<div class="m-2">
+			<div th:replace="recipe-list::recipe-list (${recipes})"></div>
+		</div>
 	</div>
-	<div class="col-lg-7">
-		<div th:replace="recipe-detail::recipe-detail"></div>
+	<div class="col-lg-6">
+		<div class="m-2">
+			<div th:replace="recipe-detail::recipe-detail"></div>
+		</div>
 	</div>
 </div>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout (feature, selected)">
+	<head>
+		<title>Recipe Book</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+	</head>
+	<body>
+		<div th:replace="header::header (${selected})"></div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<th:block th:include="${feature}"/>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+		<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+		<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	</body>
+</html>

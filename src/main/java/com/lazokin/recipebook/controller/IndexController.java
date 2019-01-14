@@ -14,6 +14,11 @@ public class IndexController {
 	
 	@GetMapping("/")
 	public String index(Model model) {
+		return "redirect:/recipes";
+	}
+	
+	@GetMapping("/recipes")
+	public String recipes(Model model) {
 		List<Recipe> recipes = List.of(
 			Recipe.builder()
 				.name("Chipotle chicken tacos")
@@ -26,13 +31,18 @@ public class IndexController {
 				.imageUrl("https://img.taste.com.au/qqy4eglS/w643-h428-cfill-q90/taste/2016/11/fish-tacos-95173-1.jpeg")
 				.build()
 		);
+		model.addAttribute("recipes", recipes);
+		return "recipes";
+	}
+	
+	@GetMapping("shopping-list")
+	public String shoppingList(Model model) {
 		List<Ingredient> ingredients = List.of(
 				Ingredient.builder().name("Apple").amount(5).build(),
 				Ingredient.builder().name("Tomato").amount(10).build()
 		);
-		model.addAttribute("recipes", recipes);
 		model.addAttribute("ingredients", ingredients);
-		return "index";
+		return "shopping-list";
 	}
 
 }

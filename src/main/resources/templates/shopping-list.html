@@ -1,13 +1,16 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="shopping-list (ingredients)" class="row">
-	<div class="col-12">
-		<div th:replace="shopping-list-edit::shopping-list-edit"></div>
-		<hr>
-		<div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action" th:each="ingredient: ${ingredients}" th:text="|${ingredient.name} (${ingredient.amount})|">
-      	Apple (5)
-      </a>
-    </div>
-	</div>
-</div>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout::layout(~{::body},'shopping-list')}">
+	<body>
+		<div class="row">
+			<div class="col-12">
+				<hr>
+				<div th:replace="shopping-list-edit::shopping-list-edit"></div>
+				<hr>
+				<div class="list-group">
+		      <a href="#" class="list-group-item list-group-item-action" th:each="ingredient: ${ingredients}" th:text="|${ingredient.name} (${ingredient.amount})|">
+		      	Apple (5)
+		      </a>
+		    </div>
+			</div>
+		</div>
+	</body>
 </html>

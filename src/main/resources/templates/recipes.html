@@ -7,7 +7,7 @@
 		</div>
 		<div class="col-lg-6">
 			<hr>
-			<div th:replace="recipe-detail::recipe-detail"></div>
+			<div th:replace="recipe-detail::recipe-detail (${selectedRecipe})"></div>
 		</div>	
 	</div>
 </body>

@@ -1,24 +1,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="recipe-list (recipes)">
-	<div class="row">
+<body>
+	<div class="row" th:fragment="recipe-list (recipes)">
 		<div class="col-12">
-			<a href="#" class="list-group-item list-group-item-action" th:each="recipe : ${recipes}">
-				<div class="d-flex justify-content-between">
-					<div class="m-1">
-						<h5 th:text="${recipe.name}">Recipe Name</h5>
-						<p th:text="${recipe.description}">Recipe Description</p>
-					</div>
-					<div class="row align-items-center m-1">
-						<img th:src="${recipe.imageUrl}" src="https://via.placeholder.com/100" alt="Recipe Name" style="max-height: 100px">
-					</div>
-				</div>
-			</a>
+			<div class="list-group">
+			  <th:block th:each="recipe : ${recipes}" th:insert="recipe-item::recipe-item (${recipe})"/>
+			</div>
+			<button type="button" class="btn btn-primary mt-2">New Recipe</button>
 		</div>
 	</div>
-	<div class="row mt-2">
-		<div class="col-12">
-			<button type="button" class="btn btn-primary">New Recipe</button>
-		</div>
-	</div>
-</div>
+</body>
 </html>

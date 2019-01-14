@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<a href="#" class="list-group-item list-group-item-action" th:fragment="recipe-item (recipe)">
+		<div class="d-flex justify-content-between">
+			<div class="m-1">
+				<h5 th:text="${recipe.name}">Recipe Name</h5>
+				<p th:text="${recipe.description}">Recipe Description</p>
+			</div>
+			<div class="row align-items-center m-1">
+				<img th:src="${recipe.imageUrl}" src="https://via.placeholder.com/100" alt="Recipe Name" style="max-height: 100px">
+			</div>
+		</div>
+	</a>
+</body>
+</html>

@@ -17,8 +17,16 @@ public class ShoppingListService {
 	}
 	
 	private void init() {
-		this.ingredients.add(Ingredient.builder().name("Apple").amount(5).build());
-		this.ingredients.add(Ingredient.builder().name("Tomato").amount(10).build());
+		this.ingredients.add(Ingredient.builder()
+			.name("Apple")
+			.amount(5)
+			.build()
+		);
+		this.ingredients.add(Ingredient.builder()
+			.name("Tomato")
+			.amount(10)
+			.build()
+		);
 	}
 	
 	public List<Ingredient> findAll() {

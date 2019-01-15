@@ -1,23 +1,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 	<div class="row" th:fragment="recipe-detail (recipe)">
+		
 		<div class="col-12" th:if="${recipe}">
+			
 			<img th:src="${recipe.imageUrl}" src="https://via.placeholder.com/500" th:alt="${recipe.name}" alt="Recipe Name" class="img-fluid">
+			
 			<h5 th:text="${recipe.name}" class="mt-2">Recipe Name</h5>
+			
 			<p th:text="${recipe.description}">Recipe Description</p>
-			<p>Ingredients</p>
+			
+			<ul class="list-group">
+				<li class="list-group-item"
+						th:each="ingredient : ${recipe.ingredients}"
+				    th:text="|${ingredient.name} (${ingredient.amount})|">
+				    Ingredient
+				</li>
+			</ul>
+			
 			<div class="dropdown">
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Manage Recipe</button>
+				<button class="btn btn-primary dropdown-toggle mt-3" type="button" data-toggle="dropdown">Manage Recipe</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="#">To Shopping List</a>
 					<a class="dropdown-item" href="#">Edit Recipe</a>
 					<a class="dropdown-item" href="#">Delete Recipe</a>
 				</div>
 			</div>
+			
 		</div>
+		
 		<div class="col-12" th:unless="${recipe}">
 			<p>No Recipe Selected</p>
 		</div>
+		
 	</div>
 </body>
 </html>

@@ -10,8 +10,8 @@
 			
 			<p th:text="${recipe.description}">Recipe Description</p>
 			
-			<ul class="list-group">
-				<li class="list-group-item"
+			<ul class="list-group" id="ingredients-list-group">
+				<li class="list-group-item" id="ingredient"
 						th:each="ingredient : ${recipe.ingredients}"
 				    th:text="|${ingredient.name} (${ingredient.amount})|">
 				    Ingredient
@@ -21,7 +21,7 @@
 			<div class="dropdown">
 				<button class="btn btn-primary dropdown-toggle mt-3" type="button" data-toggle="dropdown">Manage Recipe</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">To Shopping List</a>
+					<a class="dropdown-item" href="#" id="addToShoppingListButton">Add To Shopping List</a>
 					<a class="dropdown-item" href="#">Edit Recipe</a>
 					<a class="dropdown-item" href="#">Delete Recipe</a>
 				</div>
@@ -34,5 +34,6 @@
 		</div>
 		
 	</div>
+	
 </body>
 </html>

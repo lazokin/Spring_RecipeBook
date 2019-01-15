@@ -27,7 +27,7 @@ public class ShoppingListController {
 		return "shopping-list";
 	}
 
-	@PostMapping("/add")
+	@PostMapping("/submit")
 	public String addIngredient(@ModelAttribute Ingredient ingredient) {
 		this.service.save(ingredient);
 		return "redirect:/shopping-list";

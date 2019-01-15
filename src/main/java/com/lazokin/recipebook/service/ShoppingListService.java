@@ -33,8 +33,18 @@ public class ShoppingListService {
 		return List.copyOf(this.ingredients);
 	}
 	
-	public Ingredient save(Ingredient ingredient) {
-		this.ingredients.add(ingredient);
-		return ingredient;
+	public void save(Ingredient ingredient) {
+		this.ingredients.stream()
+			.filter(i -> i.getName().equals(ingredient.getName()))
+			.findFirst()
+			.ifPresentOrElse(
+				i -> {
+					i.setAmount(i.getAmount() + ingredient.getAmount());
+				},
+				() -> {
+					this.ingredients.add(ingredient);
+				}		
+			);
 	}
+	
 }

@@ -1,6 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout::layout(~{::body},'shopping-list')}">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout::layout(~{::#feature},'shopping-list')}">
 <body>
-	<div class="row">
+	<div class="row" id="feature">
 		<div class="col-12">
 			<hr>
 			<div th:replace="shopping-list-edit::shopping-list-edit"></div>

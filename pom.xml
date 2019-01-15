@@ -16,8 +16,8 @@
 	<properties>
 		<java.version>11</java.version>
 		<webjars-bootstrap.version>4.2.1</webjars-bootstrap.version>
-		<webjars-jquery-ui.version>1.12.1</webjars-jquery-ui.version>
 		<webjars-jquery.version>3.3.1</webjars-jquery.version>
+		<webjars-popper.version>1.14.6</webjars-popper.version>
 	</properties>
 
 	<dependencies>
@@ -74,9 +74,9 @@
 			<version>${webjars-jquery.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>jquery-ui</artifactId>
-			<version>${webjars-jquery-ui.version}</version>
+	    <groupId>org.webjars</groupId>
+	    <artifactId>popper.js</artifactId>
+	    <version>${webjars-popper.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>

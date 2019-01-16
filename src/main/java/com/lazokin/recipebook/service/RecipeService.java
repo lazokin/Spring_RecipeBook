@@ -45,10 +45,7 @@ public class RecipeService {
 		return List.copyOf(this.recipes);
 	}
 	
-	public Recipe findByName(String name) {
-		return this.recipes.stream()
-				.filter(recipe -> recipe.getName().equals(name))
-				.findFirst()
-				.orElse(null);
+	public Recipe findById(int id) {
+		return this.recipes.get(id);
 	}
 }

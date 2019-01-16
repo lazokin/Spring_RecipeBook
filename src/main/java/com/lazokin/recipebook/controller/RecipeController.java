@@ -27,11 +27,11 @@ public class RecipeController {
 		return "recipes";
 	}
 	
-	@GetMapping("/{name}")
-	public String showSelectedRecipe(@PathVariable String name, Model model) {
+	@GetMapping("/{id}")
+	public String showSelectedRecipe(@PathVariable int id, Model model) {
 		List<Recipe> recipes = this.service.findAll();
 		model.addAttribute("recipes", recipes);
-		model.addAttribute("selectedRecipe", this.service.findByName(name));
+		model.addAttribute("selectedRecipe", this.service.findById(id));
 		return "recipes";
 	}
 	

@@ -3,7 +3,9 @@
 	<div class="row" th:fragment="recipe-list (recipes)">
 		<div class="col-12">
 			<div class="list-group">
-			  <th:block th:each="recipe : ${recipes}" th:insert="recipe-item::recipe-item (${recipe})"/>
+			  <th:block th:each="recipe: ${recipes}">
+			  	<a th:replace="recipe-item::recipe-item (${recipeStat.index}, ${recipe})"></a>
+			  </th:block>
 			</div>
 			<button type="button" class="btn btn-primary mt-3">New Recipe</button>
 		</div>

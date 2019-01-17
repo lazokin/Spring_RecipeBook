@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-	<div class="row" th:fragment="recipe-detail (recipe)">
+	<div class="row" th:fragment="recipe-detail (recipe, selectedIndex)">
 		
 		<div class="col-12">
 			
@@ -22,7 +22,7 @@
 				<button class="btn btn-primary dropdown-toggle mt-3" type="button" data-toggle="dropdown">Manage Recipe</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="#" id="addToShoppingListButton">Add To Shopping List</a>
-					<a class="dropdown-item" href="#">Edit Recipe</a>
+					<a class="dropdown-item" href="#" th:href="@{'/recipes/'+${selectedIndex}+'/edit'}">Edit Recipe</a>
 					<a class="dropdown-item" href="#">Delete Recipe</a>
 				</div>
 			</div>

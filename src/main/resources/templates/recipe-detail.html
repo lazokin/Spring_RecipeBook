@@ -3,14 +3,14 @@
 	<div class="row" th:fragment="recipe-detail (recipe, selectedIndex)">
 		
 		<div class="col-12">
-			
-			<img th:src="${recipe.imageUrl}" src="https://via.placeholder.com/500" th:alt="${recipe.name}" alt="Recipe Name" class="img-fluid">
-			
-			<h5 th:text="${recipe.name}" class="mt-2">Recipe Name</h5>
+
+			<h4 th:text="${recipe.name}">Recipe Name</h4>
 			
 			<p th:text="${recipe.description}">Recipe Description</p>
 			
-			<ul class="list-group" id="ingredients-list-group">
+			<img th:src="${recipe.imageUrl}" src="https://via.placeholder.com/500" th:alt="${recipe.name}" alt="Recipe Name" class="img-fluid">
+			
+			<ul class="list-group mt-3" id="ingredients-list-group">
 				<li class="list-group-item" id="ingredient"
 						th:each="ingredient : ${recipe.ingredients}"
 				    th:text="|${ingredient.name} (${ingredient.amount})|">

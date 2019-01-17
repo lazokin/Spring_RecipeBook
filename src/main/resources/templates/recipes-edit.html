@@ -3,11 +3,11 @@
 	<div class="row" id="feature">
 		<div class="col-lg-6">
 			<hr>
-			<th:block th:replace="recipe-list::recipe-list (${recipes})">
+			<th:block th:replace="recipe-list::recipe-list (${recipes}, ${selectedIndex})">
 		</div>
 		<div class="col-lg-6">
 			<hr>
-			<div th:replace="recipe-detail::recipe-detail (${selectedRecipe})"></div>
+			<th:block th:replace="recipe-edit::recipe-edit (${recipe})">
 		</div>	
 	</div>
 </body>

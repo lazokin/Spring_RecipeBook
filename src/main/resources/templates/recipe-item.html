@@ -1,6 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-	<a th:href="@{'/recipes/'+${index}}" href="#" class="list-group-item list-group-item-action" th:fragment="recipe-item (index, recipe)">
+	<a class="list-group-item list-group-item-action" th:fragment="recipe-item (recipe, index, selected)"
+		 th:href="@{'/recipes/'+${index}}" href="#" th:classappend="${selected == index} ? 'active' : ''">
 		<div class="d-flex justify-content-between">
 			<div class="m-1">
 				<h5 th:text="${recipe.name}">Recipe Name</h5>

@@ -1,10 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-	<div class="row" th:fragment="recipe-list (recipes)">
+	<div class="row" th:fragment="recipe-list (recipes, selectedIndex)">
 		<div class="col-12">
 			<div class="list-group">
 			  <th:block th:each="recipe: ${recipes}">
-			  	<a th:replace="recipe-item::recipe-item (${recipeStat.index}, ${recipe})"></a>
+			  	<a th:replace="recipe-item::recipe-item (${recipe}, ${recipeStat.index}, ${selectedIndex})"></a>
 			  </th:block>
 			</div>
 			<button type="button" class="btn btn-primary mt-3">New Recipe</button>

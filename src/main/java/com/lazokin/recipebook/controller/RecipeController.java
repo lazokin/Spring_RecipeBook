@@ -24,15 +24,33 @@ public class RecipeController {
 	@GetMapping
 	public String showRecipes(Model model) {
 		model.addAttribute("recipes", this.service.findAll());
-		return "recipes";
+		model.addAttribute("selectedIndex", -1);
+		return "recipes-none";
 	}
 	
 	@GetMapping("/{id}")
-	public String showSelectedRecipe(@PathVariable int id, Model model) {
+	public String showRecipe(@PathVariable int id, Model model) {
 		List<Recipe> recipes = this.service.findAll();
 		model.addAttribute("recipes", recipes);
-		model.addAttribute("selectedRecipe", this.service.findById(id));
-		return "recipes";
+		model.addAttribute("recipe", this.service.findById(id));
+		model.addAttribute("selectedIndex", id);
+		return "recipes-detail";
+	}
+	
+	@GetMapping("/{id}/edit")
+	public String editRecipe(@PathVariable int id, Model model) {
+		List<Recipe> recipes = this.service.findAll();
+		model.addAttribute("recipes", recipes);
+		model.addAttribute("recipe", this.service.findById(id));
+		model.addAttribute("selectedIndex", id);
+		return "recipes-edit";
+	}
+	
+	@GetMapping("/new")
+	public String newRecipe(Model model) {
+		model.addAttribute("recipes", this.service.findAll());
+		model.addAttribute("selectedIndex", -1);
+		return "recipes-new";
 	}
 	
 }

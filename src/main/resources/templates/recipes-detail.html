@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout::layout(~{::#feature},'recipes')}">
+<body>
+	<div class="row" id="feature">
+		<div class="col-lg-6">
+			<hr>
+			<p th:text="${index}">asdf</p>
+			<th:block th:replace="recipe-list::recipe-list (${recipes}, ${selectedIndex})">
+		</div>
+		<div class="col-lg-6">
+			<hr>
+			<th:block th:replace="recipe-detail::recipe-detail (${recipe})">
+		</div>	
+	</div>
+</body>
+</html>

@@ -2,12 +2,12 @@
 <body>
 	<a class="list-group-item list-group-item-action" th:fragment="recipe-item (recipe, index, selected)"
 		 th:href="@{'/recipes/'+${index}}" href="#" th:classappend="${selected == index} ? 'active' : ''">
-		<div class="d-flex justify-content-between">
+		<div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
 			<div class="m-1">
 				<h5 th:text="${recipe.name}">Recipe Name</h5>
 				<p th:text="${recipe.description}">Recipe Description</p>
 			</div>
-			<div class="row align-items-center m-1">
+			<div class="row m-1">
 				<img th:src="${recipe.imageUrl}" src="https://via.placeholder.com/100" alt="Recipe Name" style="max-height: 100px">
 			</div>
 		</div>

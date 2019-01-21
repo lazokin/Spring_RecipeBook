@@ -1,4 +1,4 @@
-$( "#addToShoppingListButton" ).click(function() {
+$("#addToShoppingListButton").click(function() {
 	$("#ingredients-list-group > li").each(function(index) {
 		var name = $( this ).text().split(" ")[0];
 		var amount = $( this ).text().match("[0-9]")[0];
@@ -11,4 +11,22 @@ $( "#addToShoppingListButton" ).click(function() {
 			dataType: "json"
 		});
 	});
+});
+
+$("#deleteShoppingListButton").click(function() {
+	let selectedIndex = $("#selectedIndex").val();
+	$.ajax({
+	    url: "/shopping-list/" + selectedIndex + "/delete",
+		type: "delete"
+	}).always(function() {
+		window.location.href = '/shopping-list'
+	});
+});
+
+$("#clearShoppingListButton").click(function() {
+	window.location.href = '/shopping-list'
+});
+
+$( ".form-control" ).change(function() {
+	$("#clearShoppingListButton").prop('disabled', false);
 });

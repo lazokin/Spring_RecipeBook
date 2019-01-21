@@ -6,10 +6,15 @@
 			<div th:replace="shopping-list-edit::shopping-list-edit"></div>
 			<hr>
 			<div class="list-group">
-	      <a href="#" class="list-group-item list-group-item-action" th:each="ingredient: ${ingredients}" th:text="|${ingredient.name} (${ingredient.amount})|">
+	      <a class="list-group-item list-group-item-action"
+	      	 href="#"
+	         th:each="ingredient: ${ingredients}"
+	         th:text="|${ingredient.name} (${ingredient.amount})|"
+	         th:href="@{shopping-list/} + ${ingredientStat.index}">
 	      	Apple (5)
 	      </a>
 	    </div>
+	    <p th:if="${ingredients.isEmpty()}">Shopping list is empty.</p>
 		</div>
 	</div>
 </body>

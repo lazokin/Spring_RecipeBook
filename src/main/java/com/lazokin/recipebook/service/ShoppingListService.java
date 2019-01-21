@@ -33,6 +33,10 @@ public class ShoppingListService {
 		return List.copyOf(this.ingredients);
 	}
 	
+	public Ingredient findByIndex(int index) {
+		return this.ingredients.get(index);
+	}
+	
 	public void save(Ingredient ingredient) {
 		this.ingredients.stream()
 			.filter(i -> i.getName().equals(ingredient.getName()))
@@ -45,6 +49,15 @@ public class ShoppingListService {
 					this.ingredients.add(ingredient);
 				}		
 			);
+	}
+	
+	public void update(int index, Ingredient ingredient) {
+		this.ingredients.get(index).setName(ingredient.getName());
+		this.ingredients.get(index).setAmount(ingredient.getAmount());
+	}
+	
+	public void delete(int index) {
+		this.ingredients.remove(index);
 	}
 	
 }
